@@ -1,0 +1,28 @@
+{
+	"name": "opencode-snapshot-repro",
+	"version": "1.0.0",
+	"private": true,
+	"type": "module",
+	"packageManager": "pnpm@10.33.0",
+	"cloudflare": {
+		"bindings": {
+			"REPRO_TOKEN": {
+				"description": "Choose a long random string. The browser sends it as a bearer token to protect container control endpoints."
+			}
+		}
+	},
+	"scripts": {
+		"deploy": "wrangler deploy",
+		"dev": "wrangler dev",
+		"typecheck": "tsc --noEmit",
+		"types": "wrangler types --strict-vars=false"
+	},
+	"dependencies": {
+		"@cloudflare/sandbox": "0.12.1",
+		"@opencode-ai/sdk": "1.15.13"
+	},
+	"devDependencies": {
+		"typescript": "5.9.3",
+		"wrangler": "4.99.0"
+	}
+}

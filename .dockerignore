@@ -1,0 +1,5 @@
+node_modules
+.git
+.dev.vars
+.dev.vars.example
+.wrangler

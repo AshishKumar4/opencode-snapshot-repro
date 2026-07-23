@@ -1,0 +1,11 @@
+#!/bin/sh
+
+case "$*" in
+	*"add --all --sparse"*"--pathspec-from-file=-"*)
+		printf '%s snapshot git stalled: git %s\n' "$(date -Iseconds)" "$*" >> /tmp/snapshot-git.log
+		sleep 3600
+		;;
+	*)
+		exec /usr/bin/git "$@"
+		;;
+esac
